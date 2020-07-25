@@ -2,7 +2,8 @@
 
 from celery import Celery
 
-app = Celery('tasks', backend='redis://192.168.31.254:6379', broker='amqp://guest@192.168.31.254:5672//')
+# app = Celery('tasks', backend='redis://192.168.31.254:6379', broker='amqp://guest@192.168.31.254:5672//')
+app = Celery('tasks', backend='redis://192.168.31.254:6379', broker='redis://192.168.31.254:6379/0')
 
 app.conf.task_serializer = 'json'
 
