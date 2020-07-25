@@ -12,7 +12,7 @@ app = Celery('proj',
 app.conf.update(
     result_expires=3600,
     task_routes={
-        'proj.tasks.add': {'queue': 'hipri'},
+        'tasks.add': {'queue': 'hipri'},
     },
 )
 app.conf.timezone = 'Europe/London'
